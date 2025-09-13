@@ -1,8 +1,11 @@
 function reverseEachWord(arg) {
-    const sentence = String(arg)
+    const sentenceSplitted = String(arg).split(" ")
     let res = ""
-    for(let i = sentence.length - 1; i >= 0; i--) {
-        res += sentence[i]
+    for(let j = 0; j < sentenceSplitted.length; j++) {
+        for(let i = sentenceSplitted[j].length - 1; i >= 0; i--) {
+            res += sentenceSplitted[j][i]
+        }
+        if(j !== sentenceSplitted.length - 1) res += " "
     }
     return res
 }
